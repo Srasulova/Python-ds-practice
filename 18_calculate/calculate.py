@@ -26,3 +26,20 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
         >>> calculate('foo', 2, 3)
         
     """
+    match operation:
+        case "add":
+            result = a + b
+        case "subtract":
+            result = a - b
+        case "multiply":
+            result = a * b
+        case "divide":
+            result = a / b
+        case _:
+            return
+    
+    if make_int == True:
+        result = int(result)
+    
+    return f"{message} {result}"
+
